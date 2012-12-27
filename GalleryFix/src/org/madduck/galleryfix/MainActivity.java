@@ -88,7 +88,7 @@ public class MainActivity extends Activity implements OnClickListener {
 		return true;
 	}
 
-	@SuppressLint("SimpleDateFormat")
+	@SuppressLint({ "SimpleDateFormat", "DefaultLocale" })
 	private class FixFolderTask extends AsyncTask<List<String>, Integer, Long> {
 
 		private Context context;
@@ -116,6 +116,13 @@ public class MainActivity extends Activity implements OnClickListener {
 				publishProgress(i);
 				++i;
 				
+				if (!filename.toLowerCase().endsWith(".png") && !filename.toLowerCase().endsWith(".jpg"))
+				{
+					continue;
+				}
+				
+				Log.i("Gallery Fix", "Doing " + filename);
+				
 				
 				try {
 					ExifInterface exif = new ExifInterface(filename);
@@ -138,7 +145,7 @@ public class MainActivity extends Activity implements OnClickListener {
 					exif.saveAttributes();
 
 				} catch (IOException e) {
-					Log.e("toto", "Throw");
+					Log.e("Gallery Fix", "Throw : " + e.getMessage());
 					e.printStackTrace();
 				}
 
