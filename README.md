@@ -2,6 +2,7 @@ AndroidGalleryDateFix
 =====================
 
 !!!! Please note that this app need you to have IO File Manager installed on your device.
+
 !!!! Please note that this app will change the value of the date taken and gps time and date of the picture.
 
 
