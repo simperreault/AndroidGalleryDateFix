@@ -12,4 +12,13 @@
         android:layout_centerVertical="true"
         android:text="@string/fix_gallery_date" />
 
+    <ProgressBar
+        android:id="@+id/progress_fix"
+        style="?android:attr/progressBarStyleHorizontal"
+        android:layout_width="200dp"
+        android:layout_height="wrap_content"
+        android:layout_centerHorizontal="true"
+        android:layout_centerVertical="true"
+        android:visibility="gone" />
+
 </RelativeLayout>
